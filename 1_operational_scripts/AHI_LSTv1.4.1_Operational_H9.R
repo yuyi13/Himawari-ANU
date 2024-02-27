@@ -126,28 +126,28 @@ for (i in 1:DirN) {
 
 		## ---- TB 10.8 micron	
 		x00 = nc_open(flB14)
-			x = ncvar_get(x00, 'channel_0014_brightness_temperature')
-		  	nc_close(x00)
-		  	x[is.na(x)] = NA
-		  	TB_11um = t(x)
+		x = ncvar_get(x00, 'channel_0014_brightness_temperature')
+		nc_close(x00)
+		x[is.na(x)] = NA
+		TB_11um = t(x)
 
-		## ---- TB 12.1 micron	
+		## ---- TB 12.1 micron
 		x00 = nc_open(flB15)
-      	  	x = ncvar_get(x00, 'channel_0015_brightness_temperature')
-    	  	nc_close(x00)
-    	  	x[is.na(x)] = NA
-		  	TB_12um = t(x)
+		x = ncvar_get(x00, 'channel_0015_brightness_temperature')
+		nc_close(x00)
+		x[is.na(x)] = NA
+		TB_12um = t(x)
 
-		## ---- Sol Zenith 
-        x00 = nc_open(flSOL)
-          	x = ncvar_get(x00, 'solar_zenith_angle')
-          	nc_close(x00)
-          	x[is.na(x)] = NA
-		  	solZA = t(x)
+		## ---- Sol Zenith
+		x00 = nc_open(flSOL)
+		x = ncvar_get(x00, 'solar_zenith_angle')
+		nc_close(x00)
+		x[is.na(x)] = NA
+		solZA = t(x)
 
-        print(paste('                                  +++ completed extraction for',TBfolders[i],'hrs.'))
-        print('')
-        print( ' - - - -  LST retrieval commencing now . . . ')
+		print(paste('                                  +++ completed extraction for',TBfolders[i],'hrs.'))
+		print('')
+		print( ' - - - -  LST retrieval commencing now . . . ')
 
 		# - - - LST array
 		LSTt  = matrix(NA, NROWS,NCOLS)
@@ -164,15 +164,15 @@ for (i in 1:DirN) {
 		# IEEE Transactions on Geoscience and Remote Sensing, 50(3), pp.704-713.
 
 		LSTt        = 35.022546 + 1.018212 * TB_11um + -39.387858 * eee + 
-            		  (1.263787 + 0.609744 * (1./cos(pi*senZA/1.8e+2) - 1.)) * (TB_11um - TB_12um)
+						(1.263787 + 0.609744 * (1./cos(pi*senZA/1.8e+2) - 1.)) * (TB_11um - TB_12um)
 		  
-        LSTt[NIGHT] = 36.160667 + 1.012895 * TB_11um[NIGHT] + -38.909505 * eee[NIGHT] +
-                      (1.022203 + 0.669541 * (1./cos(pi*senZA[NIGHT]/1.8e+2) - 1.)) *
-                      (TB_11um[NIGHT] - TB_12um[NIGHT])
+		LSTt[NIGHT] = 36.160667 + 1.012895 * TB_11um[NIGHT] + -38.909505 * eee[NIGHT] +
+						(1.022203 + 0.669541 * (1./cos(pi*senZA[NIGHT]/1.8e+2) - 1.)) *
+						(TB_11um[NIGHT] - TB_12um[NIGHT])
 
 		# set the LST range
-        LSTmax = 350; LSTmin = 250
-        LSTt[is.na(TB_11um)] = NA
+		LSTmax = 350; LSTmin = 250
+		LSTt[is.na(TB_11um)] = NA
 
 		# convert LST matrix to raster and remove outliers
 		LST = raster(LSTt,crs=PROJ_GEO, xmn=Emn, xmx=Emx, ymn=Nmn, ymx=Nmx)
@@ -199,10 +199,10 @@ for (i in 1:DirN) {
 
 		# read the BoM cloud mask
 		cma = raster(flCMA, varname='cma')
-        cma = projectRaster(cma, aus_template, method='ngb')
-
-        # apply cloud mask; 1 = cloud, 0 = clear
-        aus_subset[cma[] == 1] = NA
+		cma = projectRaster(cma, aus_template, method='ngb')
+		
+		# apply cloud mask; 1 = cloud, 0 = clear
+		aus_subset[cma[] == 1] = NA
 
 		writeRaster(aus_subset,lstFile,overwrite=TRUE)
 		rm(x,LST,LSTt,TB_11um,TB_12um)
