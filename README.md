@@ -19,7 +19,7 @@
 
 This is the repository for the development and operation of the Himawari-ANU LST collection.
 
-<img src="figures/graphical_abstract.png" width="300">
+<img src="figures/graphical_abstract.png" width="600">
 
 ## Background
 
@@ -35,11 +35,11 @@ This will generate two LST examples at 2016-01-01 00:00 and 00:10 UTC in `1_oper
 
 The input emissivity, values of the calibration term (i.e., SZAC values) and generated LST in different seasons are visualised as below. Note they are on different dates with the given test data here.
 
-<img src="figures/lst_examples.png" width="300">
+<img src="figures/lst_examples.png" width="600">
 
 ## Experimental scripts
 
-<img src="figures/experimental_design.png" width="300">
+<img src="figures/experimental_design.png" width="600">
 
 ## Permalink
 
