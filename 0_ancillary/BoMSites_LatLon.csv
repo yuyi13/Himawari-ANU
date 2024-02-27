@@ -1,0 +1,13 @@
+sitename,lat,lon,timezone,standard_timezone
+Darwin,-12.42,130.89,Australia/Darwin,Australia/Darwin
+Broome,-17.95,122.24,Australia/Perth,Australia/Perth
+Townsville,-19.25,146.77,Australia/Brisbane,Australia/Brisbane
+Rockhampton,-23.38,150.48,Australia/Brisbane,Australia/Brisbane
+AliceSprings,-23.80,133.89,Australia/Darwin,Australia/Darwin
+Geraldton,-28.80,114.70,Australia/Perth,Australia/Perth
+Kalgoorlie,-30.78,121.45,Australia/Perth,Australia/Perth
+Adelaide,-34.95,138.52,Australia/Adelaide,Australia/Darwin
+WaggaWagga,-35.16,147.46,Australia/Sydney,Australia/Brisbane
+Canberra,-35.27,149.11,Australia/Sydney,Australia/Brisbane
+Melbourne,-37.67,144.83,Australia/Melbourne,Australia/Brisbane
+CapeGrim,-40.68,144.69,Australia/Hobart,Australia/Brisbane
