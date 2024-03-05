@@ -26,7 +26,7 @@ The geostationary Himawari-8 satellite offers a unique opportunity to monitor su
 
 Despite this, previous research has primarily focused on analysing the directionality of LST without thoroughly exploring systematic differences between platforms. Hence, we presented a Solar Zenith Angle-based Calibration (SZAC) method to harmonise the daytime component of a split-window retrieved Himawari-8 LST (referred to here as the baseline) with the MODerate-resolution Imaging Spectroradiometer (MODIS) LST. SZAC describes the spatial heterogeneity and magnitude of diurnal LST discrepancies from different platforms, which is anticipated to complement typical directionality analyses.
 
-We conducted evaluations of the proposed method against both remotely sensed and in-situ LST, with the graphical abstract showing the main findings in this research.
+We evaluated the proposed method against both remotely sensed and in-situ LST, with the graphical abstract showing the main findings in this research.
 
 <img src="figures/graphical_abstract.jpg" width="750">
 
@@ -52,7 +52,7 @@ The experimental scripts provided herein generally describe the process from 3.2
 
 ## Figure scripts
 
-This directory provides the scripts to reproduce figures in the article. With the absence of input data, they are also not runnable and for reference only though.
+This directory provides the scripts to reproduce figures in the article. With the absence of input data, they are also not runnable and for reference purposes only though.
 
 ## Permalink
 
