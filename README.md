@@ -30,6 +30,7 @@ We evaluated the proposed method against both remotely sensed and in-situ LST, w
 
 <p>
 <img src="figures/graphical_abstract.jpg" width="750">
+
 <em>Graphical abstract</em>
 <p>
 
@@ -57,6 +58,7 @@ The experimental scripts provided herein generally describe the process from 3.2
 
 <p>
 <img src="figures/experimental_design.jpg" width="750">
+
 <em>Experimental design</em>
 <p>
 
