@@ -47,6 +47,7 @@ The input emissivity, values of the calibration term (i.e., SZAC values) and gen
 
 <p>
 <img src="figures/lst_examples.jpg" width="750">
+
 <em>Examples of input emissivity, SZAC values, baseline and ANU<sub>SZAC</sub> LST at 02:00 UTC in different austral seasons</em>
 <p>
 
