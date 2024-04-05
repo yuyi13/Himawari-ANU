@@ -28,7 +28,10 @@ Despite this, previous research has primarily focused on analysing the direction
 
 We evaluated the proposed method against both remotely sensed and in-situ LST, with the graphical abstract showing the main findings in this research.
 
+<p>
 <img src="figures/graphical_abstract.jpg" width="750">
+<em>Graphical abstract</em>
+<p>
 
 ## Operational script
 
@@ -42,13 +45,19 @@ Himawari-ANU LST is produced at every 10 mins. This will generate two LST exampl
 
 The input emissivity, values of the calibration term (i.e., SZAC values) and generated LST in different seasons are visualised as below. Note they are on different dates with the given test data here.
 
+<p>
 <img src="figures/lst_examples.jpg" width="750">
+<em>Examples of input emissivity, SZAC values, baseline and ANU<sub>SZAC</sub> LST at 02:00 UTC in different austral seasons</em>
+<p>
 
 ## Experimental scripts
 
 The experimental scripts provided herein generally describe the process from 3.2 to 3.4 (as shown below), including the Solar Zenith Angle-based Calibration (SZAC), multi-platform evaluations, and a directionality analysis (Vinnikov et al., 2012; Ermida et al., 2017).
 
+<p>
 <img src="figures/experimental_design.jpg" width="750">
+<em>Experimental design</em>
+<p>
 
 ## Figure scripts
 
@@ -56,21 +65,19 @@ This directory provides the scripts to reproduce figures in the article. With th
 
 ## Permalink
 
-The Himawari-ANU LST collection is publicly available from the TERN Data Discovery Portal [DOI].
-
-This repository is also published at Zenodo [DOI].
+The Himawari-ANU LST collection is publicly available from the TERN Data Discovery Portal (https://doi.org/10.25901/1hww-x877).
 
 ## How to cite
 
 If you found this repository helpful, please kindly consider citing:
 
-Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., Tian, S. and Ma, Y., 2024. Solar zenith angle-based calibration of Himawari-8 land surface temperature for correcting diurnal retrieval error characteristics, *Remote Sensing of Environment, Under Review*. Preprint DOI: https://doi.org/10.22541/essoar.170110655.56133673/v1
+Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., Tian, S. and Ma, Y., 2024. Solar zenith angle-based calibration of Himawari-8 land surface temperature for correcting diurnal retrieval error characteristics, *Remote Sensing of Environment, Accepted*. Preprint DOI: https://doi.org/10.22541/essoar.170110655.56133673/v1
 
 ## AGU23 poster
 Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., and Tian, S., 2023. Himawari-ANU: A recalibrated geostationary land surface temperature dataset based on MODIS spatiotemporal characteristics, *AGU Fall Meeting 2023, San Francisco, United States, 11-15 December.*
 
 ## References
 
-Ermida, S. L., DaCamara, C. C., Trigo, I. F., Pires, A. C., Ghent, D. and Remedios, J., 2017. Modelling directional effects on remotely sensed land surface temperature. Remote Sens. Environ., 190, 56-69. https://doi.org/10.1016/j.rse.2016.12.008
+Ermida, S. L., DaCamara, C. C., Trigo, I. F., Pires, A. C., Ghent, D. and Remedios, J., 2017. Modelling directional effects on remotely sensed land surface temperature. *Remote Sens. Environ., 190*, 56-69. https://doi.org/10.1016/j.rse.2016.12.008
 
-Vinnikov, K. Y., Yu, Y., Goldberg, M. D., Tarpley, D., Romanov, P., Laszlo, I. and Chen, M., 2012. Angular anisotropy of satellite observations of land surface temperature. Geophys. Res. Lett., 39. https://doi.org/10.1029/2012GL054059
+Vinnikov, K. Y., Yu, Y., Goldberg, M. D., Tarpley, D., Romanov, P., Laszlo, I. and Chen, M., 2012. Angular anisotropy of satellite observations of land surface temperature. *Geophys. Res. Lett., 39*. https://doi.org/10.1029/2012GL054059
