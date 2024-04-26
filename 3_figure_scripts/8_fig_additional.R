@@ -10,7 +10,8 @@
 #################################
 
 source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
-library(pals); library(fields); library(terra)
+library(pals); library(fields); library(terra); library(RColorBrewer)
+spectralRamp = colorRampPalette(RColorBrewer::brewer.pal(11, 'Spectral'))
 
 directionality_ratio = function(geo_vza, geo_vaa, sza, saa, par_a, par_d){
     
@@ -81,7 +82,7 @@ anu_calib_par_d[anu_calib_par_d > 0.04] = 0.04; anu_calib_par_d[anu_calib_par_d 
 
 # make legends for par and ratio
 par(cex=2.5)
-image.plot(baseline_par_a, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image.plot(baseline_par_a, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 par(cex=2.5)
 image.plot(baseline_ratio, col=coolwarm(64), zlim=c(0.99,1.01), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 
@@ -90,42 +91,42 @@ png(paste0('/datasets/work/d61-af-soilmoisture/work/himawari/figures/directional
 layout(rbind(c(1,2,3,4),c(5,6,7,8),c(9,10,11,12)))
 par(mar = c(0.2, 0.2, 0.2, 0.2), cex = 4)
 
-image(baseline_par_a, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(baseline_par_a, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(baseline_par_a[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[1], ')'), bty='n')
 
-image(chiba_par_a, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(chiba_par_a, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(chiba_par_a[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[2], ')'), bty='n')
 
-image(copernicus_par_a, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(copernicus_par_a, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(copernicus_par_a[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[3], ')'), bty='n')
 
-image(anu_calib_par_a, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(anu_calib_par_a, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(anu_calib_par_a[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[4], ')'), bty='n')
 
-image(baseline_par_d, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(baseline_par_d, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(baseline_par_d[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[5], ')'), bty='n')
 
-image(chiba_par_d, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(chiba_par_d, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(chiba_par_d[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[6], ')'), bty='n')
 
-image(copernicus_par_d, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(copernicus_par_d, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(copernicus_par_d[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[7], ')'), bty='n')
 
-image(anu_calib_par_d, col=rainbow(64, alpha=0.8), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
+image(anu_calib_par_d, col=spectralRamp(64), zlim=c(-0.04,0.04), xlab = NA, ylab = NA, xaxt='n', yaxt='n')
 median_value = round(median(anu_calib_par_d[], na.rm=TRUE), 3)
 addCoastLines(Proj=PROJ_LATLON, Colour='black'); legend('bottomleft', legend = paste0('Median = ', format(median_value, nsmall=3)), bty='n')
 legend('topleft', legend=paste0('(', letters[8], ')'), bty='n')
