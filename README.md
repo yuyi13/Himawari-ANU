@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![R Programming](https://img.shields.io/badge/-R%20Programming-3776AB?style=flat&logo=R&logoColor=white)](https://www.r-project.org/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10929485.svg)](http://doi.org/10.5281/zenodo.10929485)
 [![Twitter Follow](https://img.shields.io/twitter/follow/yy_nash13?style=social)](https://twitter.com/yy_nash13)
 
 ## Contents
@@ -71,7 +71,7 @@ This directory provides the scripts to reproduce figures in the article. With th
 
 The Himawari-ANU LST collection is publicly available from the TERN Data Discovery Portal (https://doi.org/10.25901/1hww-x877).
 
-The published link of this repository is at [Zenodo](https://zenodo.org/doi/10.5281/zenodo.10929485).
+This repository has a permalink registered at [Zenodo](https://zenodo.org/doi/10.5281/zenodo.10929485).
 
 ## How to cite
 
