@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![R Programming](https://img.shields.io/badge/-R%20Programming-3776AB?style=flat&logo=R&logoColor=white)](https://www.r-project.org/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8017282.svg)](https://doi.org/10.5281/zenodo.8017282)
 [![Twitter Follow](https://img.shields.io/twitter/follow/yy_nash13?style=social)](https://twitter.com/yy_nash13)
 
 ## Contents
@@ -70,14 +71,26 @@ This directory provides the scripts to reproduce figures in the article. With th
 
 The Himawari-ANU LST collection is publicly available from the TERN Data Discovery Portal (https://doi.org/10.25901/1hww-x877).
 
+The published link of this repository is at [Zenodo](https://zenodo.org/doi/10.5281/zenodo.10929485).
+
 ## How to cite
 
 If you found this repository helpful, please kindly consider citing:
 
-Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., Tian, S. and Ma, Y., 2024. Solar zenith angle-based calibration of Himawari-8 land surface temperature for correcting diurnal retrieval error characteristics, *Remote Sensing of Environment, Accepted*. Preprint DOI: https://doi.org/10.22541/essoar.170110655.56133673/v1
+```
+@article{YU2024114176,
+author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Thomas G. Van Niel and Cai Dejun and Siyuan Tian and Yichuan Ma},
+title = {Solar zenith angle-based calibration of Himawari-8 land surface temperature for correcting diurnal retrieval error characteristics},
+journal = {Remote Sensing of Environment},
+volume = {308},
+pages = {114176},
+year = {2024},
+doi = {https://doi.org/10.1016/j.rse.2024.114176},
+}
+```
 
 ## AGU23 poster
-Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., and Tian, S., 2023. Himawari-ANU: A recalibrated geostationary land surface temperature dataset based on MODIS spatiotemporal characteristics, *AGU Fall Meeting 2023, San Francisco, United States, 11-15 December.*
+Yu, Y., Renzullo, L. J., McVicar, T. R., Van Niel, T. G., Cai, D., and Tian, S., 2023. Himawari-ANU: A recalibrated geostationary land surface temperature dataset based on MODIS spatiotemporal characteristics, *AGU Fall Meeting 2023, San Francisco, United States, 11-15 December.* https://doi.org/10.22541/essoar.171269611.14193436/v1
 
 ## References
 
