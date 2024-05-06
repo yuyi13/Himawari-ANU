@@ -85,7 +85,7 @@ journal = {Remote Sensing of Environment},
 volume = {308},
 pages = {114176},
 year = {2024},
-doi = {https://doi.org/10.1016/j.rse.2024.114176},
+doi = {https://doi.org/10.1016/j.rse.2024.114176}
 }
 ```
 
