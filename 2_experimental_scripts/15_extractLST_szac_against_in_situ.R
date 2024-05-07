@@ -24,23 +24,29 @@ ozfluxLL = read.csv('/g/data/os22/users/yu/himawari/0_code/emis_lookup.csv')
 
 # time range for evaluation
 TOIs =  seq(ISOdatetime(2016,1,1,1,0,0,tz='GMT'),ISOdatetime(2020,12,31,23,0,0,tz='GMT'),3600)
-#attr(TOIs, 'tzone') = 'GMT'
 
-foreach (i=1:nrow(ozfluxLL), .combine=cbind) %dopar% {
+foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('lubridate', 'raster')) %dopar% {
 
-    source('~/Workspace/RainfallSpectralAnalysis/SpectralAnalysis/function_SetupForGraphics.R')
-
+    getCellfromLocation = function(Lat,Long,Raster) {
+        # Raster must be a raster object
+        projinfo = as.character(crs(Raster))
+        ProjLatLon = '+proj=longlat +datum=WGS84'
+                ll = SpatialPoints(cbind(Long,Lat),proj4string=CRS(ProjLatLon))
+                en = spTransform(ll,CRS(projinfo))
+        return(cellFromXY(Raster,en))
+    }
+    
     print(paste0('start extracting value for site ',ozfluxLL$sitename[i]))
 
     longwaveRad = read.csv(paste0('/g/data/fj4/himawari/OzFluxData/0_LongwaveRadiation_UseThis/', ozfluxLL$sitename[i], '_longwaveRad.csv'))
 
-	ofile = paste0(output, ozfluxLL$sitename[i], '_extracted_data.csv')
+    ofile = paste0(output, ozfluxLL$sitename[i], '_extracted_data.csv')
     basic = data.frame(matrix(nrow=0,ncol=2))
-	colnames(basic) = c('local_time','anu_v1.4.1')
+    colnames(basic) = c('local_time','anu_v1.4.1')
     write.table(basic, ofile, row.names=FALSE, sep=',', quote=FALSE)
 
     # read the ground obs of radiation
-	L_u = longwaveRad$LW_u; L_d = longwaveRad$LW_d
+    L_u = longwaveRad$LW_u; L_d = longwaveRad$LW_d
 
     TZ = ozfluxLL$timezone[i]
     T = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + longwaveRad$time_x*3600*24
@@ -53,11 +59,11 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind) %dopar% {
 
         # anu lst data
         lstdate = format(TOIs[k],'%Y/%m/%d/')
-	    lstfile = paste0(path2anu,lstdate,format(TOIs[k],'%Y%m%d%H%M'), '00_AHI_ANU_LSTv1.4.1_AusSubset.tif')
+        lstfile = paste0(path2anu,lstdate,format(TOIs[k],'%Y%m%d%H%M'), '00_AHI_ANU_LSTv1.4.1_AusSubset.tif')
         
         if (!file.exists(lstfile)) {
             print(paste(' ---- No file for ANU LST at ',TOIs[k]))
-		    LST_anu = NA
+            LST_anu = NA
         } else {
             lst = raster(lstfile)
             LST_anu = lst[getCellfromLocation(ozfluxLL$lat[i],ozfluxLL$lon[i],lst)]
@@ -66,7 +72,7 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind) %dopar% {
 
         local_time = TOIs[k]; attr(local_time, 'tzone') = TZ
 
-		write.table(cbind(format(local_time, '%Y-%m-%d %H:%M'),LST_anu),
+        write.table(cbind(format(local_time, '%Y-%m-%d %H:%M'),LST_anu),
                     ofile,quote=FALSE,row.names=FALSE,col.names=FALSE,sep=',',append=TRUE)
 		
     }
