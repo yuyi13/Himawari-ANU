@@ -45,12 +45,6 @@ foreach (i=1:nrow(ozfluxLL), .combine=cbind, .packages=c('lubridate', 'raster'))
     colnames(basic) = c('local_time','anu_v1.4.1')
     write.table(basic, ofile, row.names=FALSE, sep=',', quote=FALSE)
 
-    # read the ground obs of radiation
-    L_u = longwaveRad$LW_u; L_d = longwaveRad$LW_d
-
-    TZ = ozfluxLL$timezone[i]
-    T = ISOdatetime(1800,1,1,0,0,0,tz=TZ) + longwaveRad$time_x*3600*24
-
     for (k in 1:length(TOIs)) {	
 
         # emis value using lookup table
