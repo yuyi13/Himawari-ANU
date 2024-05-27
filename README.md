@@ -79,13 +79,14 @@ If you found this repository helpful, please kindly consider citing:
 
 ```
 @article{YU2024114176,
-author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Thomas G. Van Niel and Cai Dejun and Siyuan Tian and Yichuan Ma},
+author = {Yi Yu and Luigi J. Renzullo and Tim R. McVicar and Thomas G. {Van Niel} and Dejun Cai and Siyuan Tian and Yichuan Ma},
 title = {Solar zenith angle-based calibration of Himawari-8 land surface temperature for correcting diurnal retrieval error characteristics},
 journal = {Remote Sensing of Environment},
 volume = {308},
 pages = {114176},
 year = {2024},
 doi = {https://doi.org/10.1016/j.rse.2024.114176}
+url = {https://www.sciencedirect.com/science/article/pii/S0034425724001949}
 }
 ```
 
